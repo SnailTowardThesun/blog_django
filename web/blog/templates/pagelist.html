@@ -1,0 +1,16 @@
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+{% load staticfiles %}
+
+<html lang="en">
+{% if list_article %}
+<h1>{{ list_article.0.article_title }}</h1>
+{% endif %}
+</html>
