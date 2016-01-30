@@ -10,12 +10,13 @@
 {% load staticfiles %}
 
 <html lang="en">
+<link rel="shortcut icon" type="image/png" href="{% static 'blog/favicon.ico' %}"/>
 	<head>
 		<title>Home-Me's blog</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" >
 		<!-- Custom CSS -->
-		<link href="{% static 'css/blog.css' %}" rel="stylesheet">
+		<link href="{% static 'blog/css/blog.css' %}" rel="stylesheet">
 		<!-- Custom js -->
 
 		<!-- Custom Fonts -->
@@ -61,7 +62,7 @@
 
 		<!-- Page Header -->
 		<!-- Set your background image for this header on the line below. -->
-		<header class="intro-header" style="background-image: url({% static 'images/saber-background.jpg' %})">
+		<header class="intro-header" style="background-image: url({% static 'blog/images/saber-background.jpg' %})">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -156,6 +157,6 @@
 
 
 		<!-- Custom Theme JavaScript -->
-		<script src="{% static 'js/blog.js' %}"></script>
+		<script src="{% static 'blog/js/blog.js' %}"></script>
 	</body>
 </html>
