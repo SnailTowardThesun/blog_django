@@ -10,10 +10,15 @@ def homePage(request):
 
 def page_list(request,page_list_num):
     # get the blog begin with blog_begin_num
-    list_article = article.objects.order_by('-article_published_time')[int(page_list_num) - 1:int(page_list_num) + 4]
+    i_page_num = int(page_list_num)
+    list_article = article.objects.order_by('-article_published_time')[(i_page_num -1)*2:(i_page_num-1)*2 + 2]
     # get the number of all pages.
     # PS: the max size of blogs in one page is 5
-    context = {'list_article':list_article}
+    list_page = range(1,int(article.objects.count()/2)+2)
+    context = {
+            'list_article':list_article,
+            'list_page':list_page,
+            }
     return render(request,'blog/pagelist.html',context)
 
 def article_page(request,article_file):
