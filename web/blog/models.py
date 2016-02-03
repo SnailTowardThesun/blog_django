@@ -20,8 +20,7 @@ class Article(models.Model):
 
 
 class Comment(models.Model):
-    article_UUID_string = models.CharField(
-        max_length=200)  # unique key.format is title + date ,e.g: first_blog_2016_01_22
+    article_UUID_string = models.CharField(max_length=200)  # unique key.format is title + date ,e.g: first_blog_2016_01_22
     comment_author = models.CharField(max_length=200)
     comment_published_time = models.DateTimeField()
     comment_context = models.CharField(max_length=5000)

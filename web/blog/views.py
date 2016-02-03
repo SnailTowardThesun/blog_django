@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from models import *
+from forms import *
 
 
 # Create your views here.
@@ -22,7 +23,7 @@ def page_list(request, page_list_num):
         previous = i_page_num - 1
 
     count = Article.objects.all().count()
-    print("the i_page_num is ", i_page_num," the article's count is ", count)
+    print("the i_page_num is ", i_page_num, " the article's count is ", count)
     if i_page_num * 2 > count:
         next_page = i_page_num
     else:
@@ -38,6 +39,13 @@ def page_list(request, page_list_num):
 def article_page(request, article_file):
     # get comments here 
     return render(request, 'blog/BlogPages/' + article_file + '.html')
+
+
+def leave_message(request):
+    if request.method == 'POST':
+        message = ContactMeMessage(request.POST)
+        print(message['customer_name'].value())
+    return render(request, 'blog/leave_message_result.html')
 
 
 # static files

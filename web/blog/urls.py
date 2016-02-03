@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^about', views.aboutMe, name='about'),
     url(r'^contact', views.contact, name='contact'),
     url(r'^post', views.post, name='post'),
+    url(r'^leave_message', views.leave_message, name='leave_message'),
     url(r'^article/(?P<article_file>\w+)/$', views.article_page, name='article_detail'),
     url(r'^page(?P<page_list_num>\w+)/$', views.page_list, name='get_page_list'),
 ]
