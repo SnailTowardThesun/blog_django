@@ -1,13 +1,14 @@
 from django.shortcuts import render
 from models import *
 from forms import *
-
+from django.template.loader import *
 
 # Create your views here.
 def homepage(request):
     # get top five blogs here
     latest_article = Article.objects.order_by('-article_published_time')[:5]
-    context = {'latest_article': latest_article}
+    page_name = 'ME_KUN_HAN'
+    context = {'latest_article': latest_article, 'page_name':page_name}
     return render(request, 'blog/index.html', context)
 
 
@@ -38,7 +39,7 @@ def page_list(request, page_list_num):
 
 def article_page(request, article_file):
     # get comments here 
-    return render(request, 'blog/BlogPages/' + article_file + '.html')
+    return render(request, 'blog/BlogPages/' + article_file + '.md')
 
 
 def leave_message(request):
@@ -59,3 +60,6 @@ def contact(request):
 
 def post(request):
     return render(request, 'blog/post.html')
+    
+def navigation(request):
+    return render(request, 'blog/navigation.html')

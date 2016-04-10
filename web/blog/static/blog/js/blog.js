@@ -2,3 +2,4 @@
 function welcome(){
     window.alert("welcome");
 }
+
