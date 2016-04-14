@@ -25,7 +25,7 @@ def page_list(request, page_list_num):
 
     count = Article.objects.all().count()
     print("the i_page_num is ", i_page_num, " the article's count is ", count)
-    if i_page_num * 2 > count:
+    if i_page_num * 2 >= count:
         next_page = i_page_num
     else:
         next_page = i_page_num + 1
