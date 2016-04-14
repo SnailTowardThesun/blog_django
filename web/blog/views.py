@@ -39,7 +39,7 @@ def page_list(request, page_list_num):
 
 def article_page(request, article_file):
     # get comments here 
-    return render(request, 'blog/BlogPages/' + article_file + '.md')
+    return render(request, 'blog/BlogPages/' + article_file + '.html')
 
 
 def leave_message(request):
@@ -60,6 +60,3 @@ def contact(request):
 
 def post(request):
     return render(request, 'blog/post.html')
-    
-def navigation(request):
-    return render(request, 'blog/navigation.html')
