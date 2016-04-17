@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from models import *
 from forms import *
-from django.template.loader import *
 
 # Create your views here.
 def homepage(request):
@@ -44,8 +43,14 @@ def article_page(request, article_file):
 
 def leave_message(request):
     if request.method == 'POST':
-        message = ContactMeMessage(request.POST)
-        print(message['customer_name'].value())
+        contact_message = ContactMeMessage(request.POST)
+        if contact_message.is_valid():
+            print('the contact message is valid')
+            name = request.POST['customer_name']
+            email = request.POST['email_address']
+            phone = request.POST['phone_number']
+            message = request.POST['message']
+            print(name, email, phone, message)
     return render(request, 'blog/leave_message_result.html')
 
 
