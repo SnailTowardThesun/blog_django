@@ -1,1 +1,9 @@
 *.pyc
+*.ids
+web/.idea/dataSources.local.xml
+web/.idea/vcs.xml
+web/.idea/workspace.xml
+web/.idea/dataSources.xml
+web/.idea/misc.xml
+web/.idea/modules.xml
+web/.idea/web.iml

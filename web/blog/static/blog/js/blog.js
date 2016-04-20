@@ -3,3 +3,7 @@ function welcome(){
     window.alert("welcome");
 }
 
+function redirect_to_home() {
+    window.location.href = "index.html"
+}
+
