@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% block title %}
+    <title>Player</title>
+{% endblock %}
+
+{% block page_name %}
+    <h1>FLASH PLAYER</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <video width="752" height="576" controls autoplay>
+                    <source src="{% static 'blog/videos/test_low.mp4' %}" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+{% endblock %}

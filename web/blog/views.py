@@ -63,5 +63,5 @@ def contact(request):
     return render(request, 'blog/contact.html')
 
 
-def post(request):
-    return render(request, 'blog/post.html')
+def player(request):
+    return render(request, 'blog/player.html')
